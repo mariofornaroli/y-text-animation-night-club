@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nixie One', cursive;
+}
+
+/* CSS variable for text shadow */
+:root {
+    --text-shadow:
+    0 0 10px #b6dcff,
+    0 0 24px #70baff,
+    -4px 2px 8px #70baff,
+    4px 2px 8px #70baff,
+    0 -8px 50px #2495ff,
+    0 8px 50px #2495ff
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url(./images/img.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+h1 {
+    position: relative;
+    font-size: 5em;
+    color: #e9f4ff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: var(--text-shadow);
+    animation: blink 5s infinite;
+}
+
+.broken {
+    animation: broken 5s linear infinite;
+}
+
+.broken2 {
+    animation: broken2 5s linear infinite;
+}
+
+/* Playing with opacity */
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+    25% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 0.85;
+    }
+    38% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 0.96;
+    }
+    55% {
+        opacity: 0.9;
+    }
+    70% {
+        opacity: 1;
+    }
+    72% {
+        opacity: 0.65;
+    }
+    90% {
+        opacity: 0.93;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Playing with text-shadow and color */
+
+@keyframes broken {
+    0%,
+    29%,
+    40%,
+    86% {
+        text-shadow: var(--text-shadow);
+        color: #e9f4ff;
+    }
+
+    30%,
+    38% {
+        color: #3f6486;
+        text-shadow: none;
+    }
+
+    88%,
+    98% {
+        color: #3f6486;
+        text-shadow: none;
+    }
+}
+
+@keyframes broken2 {
+    0%,
+    14%,
+    16%,
+    19%,
+    26%,
+    49%,
+    51%,
+    100%{
+        text-shadow: var(--text-shadow);
+        color: #e9f4ff;
+    }
+
+    15%,
+    20%,
+    50% {
+        color: #3f6486;
+        text-shadow: none;
+    }
+}
